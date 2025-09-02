@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/p
+           http://www.springframework.org/schema/p/spring-p.xsd">
+       
+      <bean name="address" class="constructorInjection.Address" p:city="city1" p:country="country1"></bean>
+      <bean name="emp" class="constructorInjection.Employee">
+      <constructor-arg value="101" type="int"></constructor-arg>
+     <constructor-arg value="A" type="String"></constructor-arg>
+     <constructor-arg ref="address"></constructor-arg></bean>
+       
+       </beans>
+       

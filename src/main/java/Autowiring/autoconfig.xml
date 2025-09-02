@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/p
+           http://www.springframework.org/schema/p/spring-p.xsd">
+           <bean id="email" class="Autowiring.EmailCommunication" ></bean>
+           <bean id="msg" class="Autowiring.MessageCommunication" ></bean>
+           
+           <bean name="type" class="Autowiring.TypeOfCommunication" >
+             <property name="communication" ref="msg"></property>
+           </bean>
+           
+           <!-- If byName is used, then property name can be used with the other bean 
+           <bean id="email" class="Autowiring.EmailCommunication" ></bean>
+           <bean id="communication" class="Autowiring.MessageCommunication" ></bean>
+           
+           <bean name="type" class="Autowiring.TypeOfCommunication" autowire="byName">
+           -->
+           <!-- If byType is used, then primary is used 
+            <bean id="email" class="Autowiring.EmailCommunication" ></bean>
+           <bean id="msg" class="Autowiring.MessageCommunication" primary="true"></bean>
+           
+           <bean name="type" class="Autowiring.TypeOfCommunication" autowire="byType">
+           -->
+ </beans>
